@@ -12,27 +12,51 @@
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 
-<body onload="init()">
-  <div class="container-fluid text-center">
+<body>
+  <div class="container-fluid text-center border border-info rounded">
     <div class="row">
-      <div class="col-sm-12 col-md-8 col-lg-6 border border-info rounded">
-          <label>Zip Code:</label>
-          <input type="text" id="zip" title="5 digit zip code" required><br><br>
-          <button onclick="callAPI()" class="btn btn-info" title="Get Weather">Get Weather</button>
+      <div class="col col-sm-12 col-md-8 col-lg-6 offset-lg-3">
+        <label>Zip Code:</label>
+        <input type="text" id="zip" title="5 digit zip code" required><br><br>
+        <button onclick="callAPI()" class="btn btn-info" title="Get Weather">Get Weather</button>
         <h1 id="city" class="text-secondary">
         </h1>
-        <h5 id="kelvin" class="text-dark">
+      </div>
+    </div>
+  </div>
+  <div id="hidden" class="container-fluid text-center" style="display:none">
+    <div class="row">
+      <div class="col col-lg-3">
+        <h5 class="text-dark">
+          Fahrenheit: <br>
         </h5>
-        <h5 id="fahrenheit" class="text-dark">
+        <p id="fahrenheit"></p>
+      </div>
+      <div class="col col-lg-3">
+        <h5 class="text-dark">
+          Kelvin: <br>
         </h5>
-        <h5 id="celsius" class="text-dark">
-        </h5> 
-        <p id="condition" class="text-dark">
-        </p>
-        <div id="image">
+        <p id="kelvin"></p>
+      </div>
+      <div class="col col-lg-3">
+        <h5 class="text-dark">
+          Celsius: <br>
+        </h5>
+        <p id="celsius" ></p>
+      </div>
+      <div class="col col-lg-3">
+        <h5 class="text-dark">
+          Condition: <br>
+        </h5>
+        <p id="condition"></p>
+      </div>
+      <div class="row">
+        <div class="col">
+          <img id="image" src="">
         </div>
       </div>
     </div>
+  </div>
   </div>
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -45,10 +69,7 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
     crossorigin="anonymous"></script>
-    <script src="./main.js"></script>
+  <script src="./main.js"></script>
 </body>
 
 </html>
-
-
-
