@@ -20,7 +20,7 @@ async function callAPI() {
     const fhite = ((temp - 273.15) * 1.8) + 32;
     const celsius = temp - 273.15;
     const icon = data.weather[0].icon;
-    const image = "icons/" + icon + ".png";
+    const image = "./images/" + icon + ".png";
 
     document.getElementById('hidden').style = "";
     document.getElementById('city').textContent = name;
@@ -28,5 +28,21 @@ async function callAPI() {
     document.getElementById('fahrenheit').textContent = roundNum(fhite) + "°";
     document.getElementById('celsius').textContent = roundNum(celsius) + "°";
     document.getElementById('condition').textContent = description;
-    document.getElementById('image').src = image;
+    document.getElementById('image').setAttribute("src", image)
+
+//     if (icon = "01d") {
+//         document.getElementById('image').src = "icons/01d.png";
+//     }
+
+//     else if (icon = "01n") {
+//         document.getElementById('image').src = "icons/01n.png";
+//     }
+//     else if (icon = "02d") {
+//         document.getElementById('image').src = "icons/02d.png";
+//     }
+//     else if (icon = "02n") {
+//         document.getElementById('image').src = "icons/02n.png";
+//     }
+// }
 }
+
