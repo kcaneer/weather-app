@@ -14,6 +14,10 @@ async function callAPI() {
     var zipcode = document.getElementById('zip').value;
     const response = await fetch(api + zipcode + api2 + key);
     const data = await response.json();
+
+    if (data.cod == "404") {
+        return alert("invalid zipcode")
+    }
     const name = data.name;
     const temp = data.main.temp;
     const description = data.weather[0].main;
@@ -29,20 +33,6 @@ async function callAPI() {
     document.getElementById('celsius').textContent = roundNum(celsius) + "°";
     document.getElementById('condition').textContent = description;
     document.getElementById('image').setAttribute("src", image)
-
-//     if (icon = "01d") {
-//         document.getElementById('image').src = "icons/01d.png";
-//     }
-
-//     else if (icon = "01n") {
-//         document.getElementById('image').src = "icons/01n.png";
-//     }
-//     else if (icon = "02d") {
-//         document.getElementById('image').src = "icons/02d.png";
-//     }
-//     else if (icon = "02n") {
-//         document.getElementById('image').src = "icons/02n.png";
-//     }
-// }
+   
 }
 
