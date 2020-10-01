@@ -10,6 +10,15 @@ function roundNum(x) {
     return y
 }
 
+var input = document.getElementById('zip')
+
+input.addEventListener("keyup", function (event) {
+    event.preventDefault();
+    if (event.keyCode === 13) {
+        callAPI();
+    }
+})
+
 async function callAPI() {
     var zipcode = document.getElementById('zip').value;
     const response = await fetch(api + zipcode + api2 + key);
@@ -33,6 +42,6 @@ async function callAPI() {
     document.getElementById('celsius').textContent = roundNum(celsius) + "°";
     document.getElementById('condition').textContent = description;
     document.getElementById('image').setAttribute("src", image)
-   
+
 }
 
