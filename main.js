@@ -6,8 +6,7 @@ var api2 = ",us&appid=";
 var key = "2a891f25c80028033b31396fe83cee9e";
 
 function roundNum(x) {
-    var y = x.toFixed(2)
-    return y
+    return x.toFixed(2)
 }
 
 var input = document.getElementById('zip')
